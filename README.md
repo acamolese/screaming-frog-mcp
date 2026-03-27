@@ -24,22 +24,56 @@ Or with pip in a virtual environment:
 pip install -e .
 ```
 
+After installation, find the full path to the command:
+
+```bash
+which screaming-frog-mcp
+```
+
+You will need this path for the configuration below (typically `~/.local/bin/screaming-frog-mcp` when installed via pipx).
+
 ## Configuration
 
-Add to your MCP client configuration (e.g. `.mcp.json`):
+The MCP server needs to be registered in the config file of your MCP client. The file location and format vary depending on the client you use.
+
+### Claude Code (CLI)
+
+Add to `~/.claude/.mcp.json`:
 
 ```json
 {
   "mcpServers": {
     "screaming-frog-seo": {
       "type": "stdio",
-      "command": "screaming-frog-mcp"
+      "command": "/full/path/to/screaming-frog-mcp"
     }
   }
 }
 ```
 
-If your MCP client does not find the command, use the full path instead. You can find it with `which screaming-frog-mcp` (typically `~/.local/bin/screaming-frog-mcp` when installed via pipx).
+### Claude Desktop (macOS app)
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`, inside the existing `mcpServers` object:
+
+```json
+{
+  "mcpServers": {
+    "screaming-frog-seo": {
+      "command": "/full/path/to/screaming-frog-mcp"
+    }
+  }
+}
+```
+
+Note: Claude Desktop does not use the `"type": "stdio"` field. If the file already contains other MCP servers, just add the `"screaming-frog-seo"` entry alongside them.
+
+### Other MCP clients
+
+Refer to your client's documentation. The server uses stdio transport and the command is the path to `screaming-frog-mcp`.
+
+**Important**: Always use the absolute path to the command (from `which screaming-frog-mcp`) rather than just the name, to avoid PATH resolution issues.
+
+After editing the config, restart the application or session for changes to take effect.
 
 ## Available tools
 
