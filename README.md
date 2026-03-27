@@ -56,6 +56,18 @@ Add to your MCP client configuration (e.g. `.mcp.json`):
 | `list_tabs` | List available tabs |
 | `list_crawls` | Discover available crawls on the machine |
 
+## Slash command for automated analysis
+
+A ready-made slash command is available that runs a full technical SEO audit in one step. Copy the command file to your commands directory:
+
+```bash
+mkdir -p ~/.claude/commands
+curl -o ~/.claude/commands/analyze-crawl.md \
+  https://raw.githubusercontent.com/acamolese/screaming-frog-mcp/main/commands/analyze-crawl.md
+```
+
+Then type `/analyze-crawl` in a new session. The command will ask for your crawl file and automatically run all audits, presenting a structured report.
+
 ## Supported formats
 
 - `.dbseospider` (Derby, native DB-mode format)
