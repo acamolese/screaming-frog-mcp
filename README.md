@@ -20,12 +20,13 @@ pip install -e .
 
 ## Configuration
 
-Add to your MCP client settings:
+Add to your MCP client configuration (e.g. `.mcp.json`):
 
 ```json
 {
   "mcpServers": {
     "screaming-frog-seo": {
+      "type": "stdio",
       "command": "screaming-frog-mcp"
     }
   }
@@ -34,35 +35,35 @@ Add to your MCP client settings:
 
 ## Available tools
 
-| Tool | Descrizione |
+| Tool | Description |
 |------|-------------|
-| `load_crawl` | Carica un file di crawl |
-| `crawl_summary` | Sommario del crawl |
-| `get_pages` | Query pagine con filtri (status code, indicizzabilita, ricerca testo, sezione) |
-| `get_links` | Query link in ingresso/uscita |
-| `broken_links_report` | Report link rotti |
-| `title_meta_audit` | Audit title e meta description |
-| `indexability_audit` | Pagine non indicizzabili |
-| `redirect_chains_report` | Catene di redirect |
-| `canonical_issues_report` | Problemi canonical |
-| `hreflang_issues_report` | Problemi hreflang |
-| `orphan_pages_report` | Pagine orfane |
-| `security_issues_report` | Problemi di sicurezza |
-| `redirect_issues_report` | Problemi redirect |
-| `nofollow_inlinks_report` | Link nofollow in ingresso |
-| `compare_crawls` | Confronto tra due crawl |
-| `query_tab` | Accesso a qualsiasi tab del crawl |
-| `list_tabs` | Elenco tab disponibili |
-| `list_crawls` | Scopri crawl disponibili sulla macchina |
+| `load_crawl` | Load a crawl file |
+| `crawl_summary` | Get crawl statistics |
+| `get_pages` | Query pages with filters (status code, indexability, text search, section) |
+| `get_links` | Query inbound/outbound links |
+| `broken_links_report` | Broken links report |
+| `title_meta_audit` | Title and meta description audit |
+| `indexability_audit` | Non-indexable pages |
+| `redirect_chains_report` | Redirect chains |
+| `canonical_issues_report` | Canonical tag issues |
+| `hreflang_issues_report` | Hreflang issues |
+| `orphan_pages_report` | Orphan pages |
+| `security_issues_report` | Security issues |
+| `redirect_issues_report` | Redirect issues |
+| `nofollow_inlinks_report` | Nofollow inbound links |
+| `compare_crawls` | Compare two crawls |
+| `query_tab` | Access any crawl tab |
+| `list_tabs` | List available tabs |
+| `list_crawls` | Discover available crawls on the machine |
 
-### Formati supportati
+## Supported formats
 
-- `.dbseospider` (Derby, formato nativo DB-mode)
-- `.seospider` (progetto Screaming Frog, richiede CLI installata)
-- `.duckdb` (cache DuckDB)
+- `.dbseospider` (Derby, native DB-mode format)
+- `.seospider` (Screaming Frog project, requires CLI installed)
+- `.duckdb` (DuckDB cache)
 - `.db` (SQLite legacy)
-- Directory di export CSV
+- CSV export directories
 
-## Licenza
+## License
 
 MIT
