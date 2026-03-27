@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "screaming-frog-mcp"
+version = "0.1.0"
+description = "MCP server for Screaming Frog SEO Spider crawl analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "screamingfrog",
+]
+
+[project.scripts]
+screaming-frog-mcp = "screaming_frog_mcp.server:main"
