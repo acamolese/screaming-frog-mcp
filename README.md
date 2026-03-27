@@ -15,6 +15,12 @@ Built on top of the [screamingfrog](https://github.com/Amaculus/screaming-frog-a
 ```bash
 git clone https://github.com/acamolese/screaming-frog-mcp.git
 cd screaming-frog-mcp
+pipx install -e .
+```
+
+Or with pip in a virtual environment:
+
+```bash
 pip install -e .
 ```
 

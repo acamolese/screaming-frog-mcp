@@ -41,7 +41,7 @@ Use Bash to run `which screaming-frog-mcp`. If the command is not found:
    ```
 3. Install the package:
    ```
-   cd ~/screaming-frog-mcp && pip install -e .
+   cd ~/screaming-frog-mcp && pipx install -e .
    ```
 4. If any step in Step 1 or Step 2 required changes, tell the user to restart the session and re-run `/analyze-crawl`, then stop. Do not proceed with the analysis.
 
