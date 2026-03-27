@@ -43,7 +43,8 @@ Use Bash to run `which screaming-frog-mcp`. If the command is not found:
    ```
    cd ~/screaming-frog-mcp && pipx install -e .
    ```
-4. If any step in Step 1 or Step 2 required changes, tell the user to restart the session and re-run `/analyze-crawl`, then stop. Do not proceed with the analysis.
+4. After installation, get the full path with `which screaming-frog-mcp` and update the `command` field in `~/.claude/.mcp.json` to use that absolute path (e.g. `/home/user/.local/bin/screaming-frog-mcp`). This avoids PATH issues with some MCP clients.
+5. If any step in Step 1 or Step 2 required changes, tell the user to restart the session and re-run `/analyze-crawl`, then stop. Do not proceed with the analysis.
 
 ### Step 3: Check if the MCP tools are reachable
 

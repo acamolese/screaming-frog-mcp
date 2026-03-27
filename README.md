@@ -39,6 +39,8 @@ Add to your MCP client configuration (e.g. `.mcp.json`):
 }
 ```
 
+If your MCP client does not find the command, use the full path instead. You can find it with `which screaming-frog-mcp` (typically `~/.local/bin/screaming-frog-mcp` when installed via pipx).
+
 ## Available tools
 
 | Tool | Description |

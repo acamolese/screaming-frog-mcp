@@ -9,10 +9,7 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP(
-    "Screaming Frog SEO",
-    description="Analyze Screaming Frog SEO Spider crawl data",
-)
+mcp = FastMCP("Screaming Frog SEO")
 
 # ---------------------------------------------------------------------------
 # Crawl cache: keeps loaded crawls in memory to avoid reloading on every call
